@@ -1,6 +1,6 @@
 ---
 title: Home
-layout: template
+layout: Cayman
 filename: index.md
 --- 
 
