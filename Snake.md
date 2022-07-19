@@ -1,6 +1,6 @@
 ---
 title: Snake
-layout: template
+layout: Cayman
 filename: Snake.md
 --- 
 
