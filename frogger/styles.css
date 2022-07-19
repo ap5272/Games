@@ -47,5 +47,6 @@
 }
 
 .frog{
-    background-color: green;
+    background-image: url('images/main.png');
+    background-size: cover;
 }
