@@ -2,16 +2,27 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Rock Paper Scissors Tutorial</title>
+        <title>Rock Paper Scissors Game</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h2>Computer Choice: <span id="computer-choice"></span></h2>
-        <h2>Your Choice: <span id="user-choice"></span></h2>
-        <h2>Result: <span id="result"></span></h2>
+        <div class = "grid">
+            <div class="user">
+                <h2>Computer Choice: <span id="computer-choice"></span></h2>
+            </div>
 
-        <button id="rock">rock</button>
-        <button id="paper">paper</button>
-        <button id="scissors">scissors</button>
+            <div class="computer">
+                <h2>Your Choice: <span id="user-choice"></span></h2>
+            </div>
+        </div>
+        
+        <h2>Result: <span id="result"></span></h2>
+        <input class="rock" id="rock" type="image" src="images/rock.jpg" />
+        <input class="paper" id="paper" type="image" src="images/paper.jpg" />
+        <input class="scissors" id="scissors" type="image" src="images/scissors.jpg" />
+        <!-- <button id="rock">rock</button> -->
+        <!-- <button id="paper">paper</button> -->
+        <!-- <button id="scissors">scissors</button> -->
 
         <script src="app.js" charset="utf-8"></script>
     </body>

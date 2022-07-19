@@ -1,14 +1,51 @@
-.rock {
-  background-image: url('images/rock.jpg');
-  background-size: cover;
+.body{
+    width: 600px;
+    height: 600px;
+}
+.h2 {
+    font-size: 64px;
 }
 
-.scissors {
-  background-image: url('images/scissors.jpg');
-  background-size: cover;
+
+.grid {
+    display: flex;
+    flex-direction: column;
 }
 
-.paper {
-  background-image: url('images/paper.jpg');
-  background-size: cover;
+
+.rock{
+    border: 1px lightcoral solid;
+    opacity: 0.5;
+}
+
+.paper{
+    border: 1px lightblue solid;
+    opacity: 0.5;
+}
+
+.scissors{
+    border: 1px lightgreen solid;
+    opacity: 0.5;
+}
+
+
+
+
+
+.rock:hover{
+    border: 1px brown solid;
+    opacity: 1;
+    transition: .5s ease;
+
+}
+.paper:hover{
+    border: 1px blue solid;
+    opacity: 1;
+    transition: .5s ease;
+}
+
+.scissors:hover {
+    border: 1px solid green;
+    opacity: 1;
+    transition: .5s ease;
 }

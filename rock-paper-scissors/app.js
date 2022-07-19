@@ -1,7 +1,11 @@
+const userDisplay = document.getElementsByClassName('user')
+const computerDisplay = document.getElementsByClassName('computer')
+
 const computerChoiceDisplay = document.getElementById('computer-choice')
 const userChoiceDisplay = document.getElementById('user-choice')
+
 const resultDisplay = document.getElementById('result')
-const possibleChoices = document.querySelectorAll('button')
+const possibleChoices = document.querySelectorAll('input')
 let userChoice
 let computerChoice
 let result
@@ -11,6 +15,7 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
     userChoiceDisplay.innerHTML = userChoice
     generateComputerChoice()
     getResult()
+    markComp()
 }))
 
 function generateComputerChoice() {
@@ -64,4 +69,11 @@ function getResult(){
     }
 
     resultDisplay.innerHTML = result
+}
+
+function markUser(){
+
+}
+
+function markComp(){
 }
