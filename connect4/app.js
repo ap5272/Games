@@ -4,7 +4,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const squares= document.querySelectorAll('.grid div')
     const result = document.querySelector('#result')
-    
+    //console.log(result)
     const displayCurrentPlayer = document.querySelector('#current-player')
     let currentPlayer = 1
 
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-        if( result == '' && document.querySelectorAll('.taken').length === 49 ) {
+        if( result.innerHTML == '' && document.querySelectorAll('.taken').length === 49 ) {
             result.innerHTML = 'Draw!!!'
         }
 
@@ -125,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (currentPlayer == 1){
                     squares[i].classList.add('taken')
                     squares[i].classList.add('player-one')
+                    squares[i].innerHTML = currentPlayer
                     currentPlayer = 2
                     displayCurrentPlayer.innerHTML = currentPlayer
                     checkBoard()
@@ -132,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 else if (currentPlayer == 2){
                     squares[i].classList.add('taken')
                     squares[i].classList.add('player-two')
+                    squares[i].innerHTML = currentPlayer
                     currentPlayer = 1
                     displayCurrentPlayer.innerHTML = currentPlayer
                     checkBoard()

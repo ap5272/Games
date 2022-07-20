@@ -1,22 +1,44 @@
-.grid {
-    border: 1px solid black;
-    width: 700px;
-    height: 600px;
-    display: flex;
-    flex-wrap: wrap;
+.text {
+    font-size: 32px;
 }
 
-.grid div {
+.grid {
+    /* border: 1px solid black; */
+    width: 714px;
+    height: 612px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    background-color: antiquewhite;
+}
+
+.grid div:not(.base) {
     height: 100px;
     width: 100px;
+    
 }
+
+.grid div:not(.taken):hover {
+    background-color: grey;
+    border-radius: 50px;
+    opacity:0.5;
+}
+
 
 .player-one {
     background-color: red;
     border-radius: 50px;
+    border: 1px solid black;
+    font-size: 80px;
+    text-align: center;
+    color: antiquewhite;
 }
 
 .player-two {
     background-color: blue;
     border-radius: 50px;
+    border: 1px solid black;
+    font-size: 80px;
+    text-align: center;
+    color: antiquewhite;
 }
