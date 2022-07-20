@@ -1,6 +1,7 @@
 const timeLeftDisplay = document.querySelector('#time-left')
 const resultDisplay = document.querySelector('#result')
 const StartPauseButton = document.querySelector('#start-pause-button')
+const restartButton = document.querySelector('.restart')
 const squares = document.querySelectorAll('.grid div')
 let currentIndex = 76
 const width=9
@@ -37,6 +38,24 @@ function moveFrog(e){
 
 //document.addEventListener('keyup', moveFrog)
 
+
+
+
+function restart(){
+    clearInterval(timerId)
+    clearInterval(outcomeTimerId)
+    outcomeTimerId = null
+    timerId = null
+    currentIndex = 76
+    currentTime = 20
+
+    timerId = setInterval(autoMoveElements, 1000)
+    outcomeTimerId = setInterval(checkOutComes, 50)
+    document.addEventListener('keyup', moveFrog)
+
+}
+
+restartButton.addEventListener('click', restart)
 
 function autoMoveElements(){
     currentTime--

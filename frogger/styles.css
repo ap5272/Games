@@ -6,6 +6,11 @@
     flex-wrap: wrap;
 }
 
+@keyframes example {
+    from {background-color: lightblue;}
+    to {background-color: blue;}
+  }
+
 .grid div {
     height: 60px;
     width: 60px;
@@ -15,18 +20,10 @@
     background-color: red;
 }
 
-.starting-block {
-    background-color: blue;
-}
-
-/* .log-left, .log-right {
-    background-color: lightblue;
-} */
 
 .car-left, .car-right {
     background-color: lightgray;
 }
-
 
 
 .l1, .l2, .l3 {
@@ -42,7 +39,7 @@
 }
 
 
-,.c2,.c3 {
+.c2,.c3 {
     background-color: #F7F7F7;
 }
 
