@@ -4,7 +4,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const squares= document.querySelectorAll('.grid div')
     const result = document.querySelector('#result')
-    //console.log(result)
+    const restartButton = document.querySelector('.restart')
+    
     const displayCurrentPlayer = document.querySelector('#current-player')
     let currentPlayer = 1
 
@@ -80,6 +81,23 @@ document.addEventListener('DOMContentLoaded', () => {
     [13, 20, 27, 34],
     ]
 
+    function restart(){
+        currentPlayer = 1
+        result.innerHTML = ''
+        for (let i=0; i < squares.length; i++){
+            if (
+                squares[i].classList.contains('taken') &&
+                !squares[i].classList.contains('base')
+            ){
+                squares[i].classList.remove('taken')
+                squares[i].classList.remove('player-one')
+                squares[i].classList.remove('player-two')
+                squares[i].innerHTML = ''
+            }
+
+    }}
+
+    restartButton.addEventListener('click', restart)
     function checkBoard(){
         for (let y=0;y<winningArrays.length;y++){
             const square1 = squares[winningArrays[y][0]]
