@@ -60,25 +60,34 @@ const cardArray =[
     }
 ]
 
-cardArray.sort(() => 0.5 - Math.random())
+
+
 const resultDisplay = document.querySelector('#result')
 const gridDisplay = document.querySelector('#grid')
+const restartButton = document.querySelector('#restart')
 
 let cardsChosen = []
 let cardsChosenIds = []
-const cardsWon = []
+let cardsWon = []
+
+
+cardArray.sort(() => 0.5 - Math.random())
+restartButton.addEventListener('click', restart)
 
 function createBoard() {
     for (let i = 0; i < cardArray.length; i++){
         const card = document.createElement('img')
         card.setAttribute('src', 'images/blank.png')
         card.setAttribute('data-id', i)
+
         card.addEventListener('click', flipCard)
         gridDisplay.append(card)
     }
 }
 
 createBoard()
+//card.addEventListener('click', flipCard)
+
 
 function checkMatch(){
     const cards = document.querySelectorAll('#grid img')
@@ -90,13 +99,13 @@ function checkMatch(){
         cards[optionTwoId].setAttribute('src', 'images/blank.png')
         alert('You have clicked the same image!')
     }
-    if (cardsChosen[0] == cardsChosen[1]){
+    if (cardsChosen[0] == cardsChosen[1] && optionOneId !== optionTwoId){
         alert('Match Found!')
         cards[optionOneId].setAttribute('src', 'images/white.png')
         cards[optionTwoId].setAttribute('src', 'images/white.png')
         cards[optionOneId].removeEventListener('click', flipCard)
         cards[optionTwoId].removeEventListener('click', flipCard)
-        resultDisplay.innerHTML = 'You found all matches!!'
+        //resultDisplay.innerHTML = 'You found all matches!!'
         cardsWon.push(cardsChosen)
     }
 
@@ -108,7 +117,8 @@ function checkMatch(){
     cardsChosen = []
     cardsChosenIds = []
 
-    resultDisplay.textContent = cardsWon.length
+    //console.log(cardsWon.length)
+    resultDisplay.innerHTML = cardsWon.length
 
     if (cardsWon.length == cardArray.length/2){
         resultDisplay.textContent = 'You found all matches!!'
@@ -120,10 +130,27 @@ function flipCard() {
     const cardId = this.getAttribute('data-id')
     cardsChosen.push(cardArray[cardId].name)
     cardsChosenIds.push(cardId)
-    console.log(cardsChosen)
     this.setAttribute('src', cardArray[cardId].img)
     if (cardsChosen.length === 2){
         setTimeout(checkMatch, 500)
     }
 }
 
+function restart(){
+    //const gridDisplay = document.querySelector('#grid')
+    cardsWon = []
+    cardsChosen = []
+    cardsChosenIds = []
+    for (let i = 0; i < cardArray.length; i++){
+        //const card = document.createElement('img')
+        const cards = document.querySelectorAll('#grid img')
+        
+        cards[i].setAttribute('src', 'images/blank.png')
+        cards[i].addEventListener('click', flipCard)
+        //card.setAttribute('data-id', i)
+
+        //card.addEventListener('click', flipCard)
+        //gridDisplay.append(card)
+    }
+    cardArray.sort(() => 0.5 - Math.random())
+}
